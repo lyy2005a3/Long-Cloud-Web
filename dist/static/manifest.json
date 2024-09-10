@@ -1,0 +1,13 @@
+{
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "甜蜜云",
+  "icons": [
+    {
+      "src": "../images/applogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

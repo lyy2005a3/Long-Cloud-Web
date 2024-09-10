@@ -1,0 +1,1 @@
+import{R as i,e as n,cj as a}from"./index.db1e60aa.js";const o=t=>{const r=i("settings_layout");let e;return r==="responsive"&&(e="repeat(auto-fill, minmax(424px, 1fr))"),n(a,{w:"$full",gap:"$2",templateColumns:{"@initial":"1fr","@lg":e},get children(){return t.children}})};export{o as R};
