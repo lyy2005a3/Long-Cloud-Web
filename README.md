@@ -1,34 +1,18 @@
-## Usage
+## 个性魔改美化定制版
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+功能详情请看更新日志。
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## Docker
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+docker pull leolitaly/sweet-cloud:latest
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+预览图
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+<img width="1349" alt="截屏2024-08-04 17 10 04" src="https://github.com/user-attachments/assets/456ba1b4-1ef8-43e2-9d46-85eef6522031">
+<img width="1302" alt="截屏2024-08-04 17 13 04" src="https://github.com/user-attachments/assets/d4b34d23-950c-4a40-964f-8082fe19b399">
+<img width="1302" alt="截屏2024-08-04 17 13 11" src="https://github.com/user-attachments/assets/119bf3ed-460d-4f1e-8d77-6db13b0d4a34">
+<img width="1302" alt="截屏2024-08-04 17 13 18" src="https://github.com/user-attachments/assets/16473395-4f52-45aa-a27f-8d1236d0d139">
+<img width="1302" alt="截屏2024-08-04 17 13 32" src="https://github.com/user-attachments/assets/e6f21a29-d697-4cf6-95db-76aa5c1b77de">
+<img width="1302" alt="截屏2024-08-04 17 13 59" src="https://github.com/user-attachments/assets/f720e560-0168-46d2-921f-2f8d224df919">
+<img width="1302" alt="截屏2024-08-04 17 14 32" src="https://github.com/user-attachments/assets/2ad70bf1-45ca-4e07-a565-ce8193ffaba4">
+<img width="1302" alt="截屏2024-08-05 00 42 05" src="https://github.com/user-attachments/assets/9e5cb871-813d-4632-a011-5c3bdfe43f32">
