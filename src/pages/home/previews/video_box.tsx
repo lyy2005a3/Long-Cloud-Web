@@ -26,18 +26,6 @@ export const players: { icon: string; name: string; scheme: string }[] = [
   { icon: "nplayer", name: "nPlayer", scheme: "nplayer-$durl" },
   { icon: "potplayer", name: "PotPlayer", scheme: "potplayer://$durl" },
   { icon: "vlc", name: "VLC", scheme: "vlc://$durl" },
-
-  {
-    icon: "fileball",
-    name: "Fileball",
-    scheme: "filebox://play?url=$durl",
-  },
-  {
-    icon: "mxplayer",
-    name: "MX Player",
-    scheme:
-      "intent:$durl#Intent;package=com.mxtech.videoplayer.ad;S.title=$name;end",
-  },
   {
     icon: "mxplayer-pro",
     name: "MX Player Pro",
@@ -45,6 +33,11 @@ export const players: { icon: string; name: string; scheme: string }[] = [
       "intent:$durl#Intent;package=com.mxtech.videoplayer.pro;S.title=$name;end",
   },
   { icon: "iina", name: "IINA", scheme: "iina://weblink?url=$edurl" },
+  {
+    icon: "fileball",
+    name: "Fileball",
+    scheme: "filebox://play?url=$durl",
+  },
 ]
 
 export const AutoHeightPlugin = (player: Artplayer) => {
