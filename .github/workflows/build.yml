@@ -38,7 +38,7 @@ jobs:
       - name: Checkout dist repo
         uses: actions/checkout@v4
         with:
-          repository: li-peifeng/Sweet-Cloud-Dist
+          repository: long2005a1/Sweet-Cloud-Dist
           ref: dev
           path: Sweet-Cloud-Dist
           persist-credentials: false
@@ -68,5 +68,5 @@ jobs:
           github_token: ${{ secrets.MY_TOKEN }}
           branch: dev
           directory: Sweet-Cloud-Dist
-          repository: li-peifeng/Sweet-Cloud-Dist
+          repository: long2005a1/Sweet-Cloud-Dist
           force: true

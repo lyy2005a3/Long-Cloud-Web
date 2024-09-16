@@ -162,12 +162,12 @@
   },
   "footer": {
     "powered_by": "PeiFeng.Li",
-    "manage": "Sweet • Cloud",
-    "guest": "Sweet • Cloud"
+    "manage": "Long • Cloud",
+    "guest": "Long • Cloud"
   },
   "search": {
     "search": "搜索",
-    "no_result": "Sweet • Search",
+    "no_result": "Long • Search",
     "scopes": {
       "all": "全部",
       "folder": "目录",

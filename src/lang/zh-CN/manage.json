@@ -1,6 +1,6 @@
 {
   "sidemenu": {
-    "dashboard": "Sweet • Cloud",
+    "dashboard": "Long • Cloud",
     "settings": "设置",
     "site": "站点",
     "style": "样式",
@@ -24,7 +24,7 @@
     "ldap": "LDAP",
     "s3": "S3"
   },
-  "title": "Sweet • Cloud",
+  "title": "Long • Cloud",
   "not_admin": "请使用管理员帐户登录",
   "logout_success": "退出成功",
   "send": "发送",
