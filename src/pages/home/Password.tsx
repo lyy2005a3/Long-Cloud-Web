@@ -46,7 +46,7 @@ const Password = () => {
           columnGap="$1"
         >
           <Text color="$info9" as={Link} href={`https://www.long2024.cn`}>
-          获取授权(请联系主页Q)
+            获取授权(请联系主页Q)
           </Text>
         </Flex>
         <HStack spacing="$2">

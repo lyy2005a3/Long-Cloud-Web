@@ -33,7 +33,7 @@ export const Right = () => {
   const margin = createMemo(() => (isOpen() ? "$4" : "$5"))
   const isFolder = createMemo(() => objStore.state === State.Folder)
   const { refresh } = usePath()
-  const { toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode()
   const icon = useColorModeValue(
     {
       size: "$8",
@@ -44,8 +44,8 @@ export const Right = () => {
       size: "$8",
       component: Sun,
       p: "$0_5",
-    }
-  );
+    },
+  )
   // 到这里
 
   return (
@@ -76,7 +76,7 @@ export const Right = () => {
             as={RiSystemRefreshLine}
             tips="refresh"
             onClick={() => {
-              refresh(undefined, true);
+              refresh(undefined, true)
               notificationService.show({
                 status: "success",
                 description: "目录刷新成功",
@@ -200,19 +200,18 @@ export const Right = () => {
               />
             </Show>
 
-              <RightIcon
-                tips="toggle_checkbox"
-                as={TbCheckbox}
-                onClick={toggleCheckbox}
-              />
-              <RightIcon
-                as={AiOutlineSetting}
-                tips="browser_setting"
-                onClick={() => {
-                  bus.emit("tool", "local_settings")
-                }}
-              />
-
+            <RightIcon
+              tips="toggle_checkbox"
+              as={TbCheckbox}
+              onClick={toggleCheckbox}
+            />
+            <RightIcon
+              as={AiOutlineSetting}
+              tips="browser_setting"
+              onClick={() => {
+                bus.emit("tool", "local_settings")
+              }}
+            />
           </VStack>
           <RightIcon tips="close" as={VsHeart} onClick={onToggle} />
         </VStack>
