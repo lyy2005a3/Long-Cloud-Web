@@ -2,10 +2,10 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "甜蜜云",
+  "name": "龙氏云盘",
   "icons": [
     {
-      "src": "../images/applogo.png",
+      "src": "https://long2024.cn/yunp/applogo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

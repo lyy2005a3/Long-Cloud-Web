@@ -1,1 +1,0 @@
-System.register(["./index-legacy.22c65fcc.js"],(function(e){"use strict";var t,c,n;return{setters:[function(e){t=e.a,c=e.e,n=e.bW}],execute:function(){e("W",(function(e){var r=t();return c(n,{get colorScheme(){return e.yes?"success":"danger"},get children(){return r("global.".concat(e.yes?"yes":"no"))}})}))}}}));

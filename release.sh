@@ -1,18 +1,20 @@
 # replace version
-cd Sweet-Cloud-Web
+cd alist-web
 version=$(git describe --abbrev=0 --tags)
-sed -i -e "s/\"version\": \"2024.0.0\"/\"version\": \"$version\"/g" package.json
+sed -i -e "s/\"version\": \"0.0.0\"/\"version\": \"$version\"/g" package.json
 cat package.json
 
 # build
 pnpm install
+wget https://crowdin.com/backend/download/project/alist/zh-CN.zip 
+unzip zh-CN.zip 
 node ./scripts/i18n.mjs
 pnpm build
 cp -r dist ../
 cd ..
 
 # commit to web-dist
-cd Sweet-Cloud-Dist
+cd web-dist
 rm -rf dist
 cp -r ../dist .
 git add .
