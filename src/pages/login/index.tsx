@@ -246,9 +246,9 @@ const Login = () => {
             <Text
               color="$success9"
               as={Link}
-              href={`https://peifeng.li/request-account-authorization`}
+              href={`https://long2024.cn/404.html`}
             >
-              获取账户访问授权
+              暂不提供非管理员登录！
             </Text>
           </Flex>
         </Show>
