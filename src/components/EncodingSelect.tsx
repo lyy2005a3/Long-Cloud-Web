@@ -35,7 +35,7 @@ export function EncodingSelect(props: {
       }
     }
   })
-  
+
   return (
     <Box
       pos="absolute"

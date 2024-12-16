@@ -142,7 +142,7 @@ export const Task = (props: TaskInfo & TasksProps & TaskControlCallback) => {
           >
             {title}
           </Heading>
-          </HStack>
+        </HStack>
         <Show when={me().role === 2}>
           <Center w={cols[1].w}>
             <Creator name={props.creator} role={props.creator_role} />
@@ -150,7 +150,7 @@ export const Task = (props: TaskInfo & TasksProps & TaskControlCallback) => {
         </Show>
         <Center w={cols[2].w}>
           <TaskState state={props.state} />
-          </Center>
+        </Center>
         <Progress
           w={cols[3].w}
           trackColor="$info3"
@@ -158,7 +158,7 @@ export const Task = (props: TaskInfo & TasksProps & TaskControlCallback) => {
           size="sm"
           value={props.progress}
         >
-           <ProgressIndicator color="$info8" rounded="$md" />
+          <ProgressIndicator color="$info8" rounded="$md" />
           {/* <ProgressLabel /> */}
         </Progress>
         <Flex w={cols[4].w} gap="$1">
