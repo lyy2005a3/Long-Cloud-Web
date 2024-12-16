@@ -88,7 +88,7 @@ export const side_menu_items: SideMenuItem[] = [
       {
         title: "manage.sidemenu.ftp",
         icon: BsHddNetwork,
-        to: "/@manage/settings/ftp",
+        to: "/LONGYun2025/settings/ftp",
         component: () => <CommonSettings group={Group.FTP} />,
       },
       {
