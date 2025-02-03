@@ -38,6 +38,11 @@ export const players: { icon: string; name: string; scheme: string }[] = [
     name: "Fileball",
     scheme: "filebox://play?url=$durl",
   },
+  {
+    icon: "iPlay",
+    name: "iPlay",
+    scheme: "iplay://play/any?type=url&url=$bdurl",
+  },
 ]
 
 export const AutoHeightPlugin = (player: Artplayer) => {
