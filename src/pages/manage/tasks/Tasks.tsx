@@ -129,8 +129,8 @@ export const Tasks = (props: TasksProps) => {
             }
           })
           .sort(curSorter()) ?? [],
-        )
-      })
+      )
+    })
   }
   refresh()
   if (props.done === "undone") {
@@ -175,10 +175,10 @@ export const Tasks = (props: TasksProps) => {
   const isIndeterminate = createMemo(
     () =>
       filteredTask()
-    .map((task) => task.local.selected)
-    .some(Boolean) && !allSelected(),
-)
-const selectAll = (v: boolean) =>
+        .map((task) => task.local.selected)
+        .some(Boolean) && !allSelected(),
+  )
+  const selectAll = (v: boolean) =>
     setTasks(
       tasks().map((task) => {
         if (taskFilter()(task)) {
@@ -187,12 +187,12 @@ const selectAll = (v: boolean) =>
         return task
       }),
     )
-    const allExpanded = createMemo(() =>
-      filteredTask()
-        .map((task) => task.local.expanded)
-        .every(Boolean),
-    )
-    const expandAll = (v: boolean) =>
+  const allExpanded = createMemo(() =>
+    filteredTask()
+      .map((task) => task.local.expanded)
+      .every(Boolean),
+  )
+  const expandAll = (v: boolean) =>
     setTasks(
       tasks().map((task) => {
         if (taskFilter()(task)) {
@@ -203,7 +203,7 @@ const selectAll = (v: boolean) =>
     )
   const getSelectedId = () =>
     filteredTask()
-    .filter((task) => task.local.selected)
+      .filter((task) => task.local.selected)
       .map((task) => task.id)
   const [retrySelectedLoading, retrySelected] = useFetch(
     (): PEmptyResp => r.post(`/task/${props.type}/retry_some`, getSelectedId()),

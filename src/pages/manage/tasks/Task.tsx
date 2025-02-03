@@ -80,7 +80,7 @@ export const TaskState = (props: { state: number }) => {
 export type TaskOrderBy = "name" | "creator" | "state" | "progress"
 
 export interface TaskCol {
-   name: TaskOrderBy | "speed" | "operation"
+  name: TaskOrderBy | "speed" | "operation"
   textAlign: "left" | "right" | "center"
   w: any
 }
@@ -131,7 +131,7 @@ export const Task = (props: TaskAttribute & TasksProps & TaskLocalSetter) => {
   )
   const title =
     matches === null ? props.name : props.nameAnalyzer.title(matches)
-    const startTime =
+  const startTime =
     props.start_time === null ? -1 : new Date(props.start_time).getTime()
   const endTime =
     props.end_time === null
@@ -216,7 +216,7 @@ export const Task = (props: TaskAttribute & TasksProps & TaskLocalSetter) => {
           rounded="$full"
           size="sm"
           value={props.progress}
-           mr="$1"
+          mr="$1"
         >
           <ProgressIndicator color="$info8" rounded="$md" />
           {/* <ProgressLabel /> */}
