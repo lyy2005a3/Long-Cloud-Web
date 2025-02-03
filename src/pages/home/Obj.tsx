@@ -73,7 +73,7 @@ export const Obj = () => {
             </Show> */}
           </Match>
           <Match when={objStore.state === State.NeedPassword}>
-          <Password
+            <Password
               title={t("home.input_password")}
               password={password}
               setPassword={setPassword}
