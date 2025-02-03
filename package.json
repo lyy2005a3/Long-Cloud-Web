@@ -96,7 +96,6 @@
     "typescript-natural-sort": "^0.7.2"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,json,css,tsx,jsx}": "prettier --write --ignore-path ./.prettierignore",
-        "!pnpm-lock.yaml": "prettier --write --ignore-path ./.prettierignore"
+    "**/*": "prettier --write"
   }
 }
