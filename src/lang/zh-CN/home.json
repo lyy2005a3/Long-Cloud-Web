@@ -11,8 +11,8 @@
     "play_with": "使用...播放",
     "install": "安装",
     "installing": "正在安装",
-    "tr-install": "TrollStore",
-    "tr-installing": "TrollStore 正在安装",
+    "tr-install": "巨魔商店",
+    "tr-installing": "巨魔正在安装",
     "open_in_new_window": "在新窗口中打开",
     "auto_next": "自动按序播放"
   },
@@ -26,6 +26,7 @@
   "no_more": "* * * * *",
   "input_password": "请输入密码",
   "toolbar": {
+    "local_settings_auto": "设置成功，即将自动刷新",
     "more": "打开工具栏",
     "close": "关闭工具栏",
     "browser_setting": "浏览器设置",
@@ -33,7 +34,7 @@
     "toggle_theme": "主题切换",
     "toggle_theme_auto": "自动切换主题",
     "switch_lang": "切换语言",
-    "toggle_markdown_toc": "Markdown ToC 开关",
+    "toggle_markdown_toc": "是否显示大纲",
     "toggle_checkbox": "复选框开关",
     "rename": "重命名",
     "input_new_name": "输入新名称",
@@ -43,6 +44,16 @@
     "choose_dst_folder": "选择目标文件夹",
     "delete": "删除",
     "delete-tips": "确定要删除吗?",
+    "decompress": "解压缩",
+    "decompress-pass": "解压密码: ",
+    "decompress-cache-full": "将缓存内容全部存入临时文件",
+    "decompress-put-into-new": "解压到新的子文件夹",
+    "extract": "提取到",
+    "archive": {
+      "input_password": "请输入解压密码",
+      "incorrect_password": "密码不对哦",
+      "extract_header": "提取到 {{path}} ..."
+    },
     "copy_link": "复制链接",
     "preview_page": "预览页面",
     "down_link": "下载链接",
@@ -84,10 +95,11 @@
     "regex_rename_preview_old_name": "旧名称",
     "regex_rename_preview_new_name": "新名称",
     "regular_rename": "正则表达式文件重命名。 在第一行输入源文件名正则表达式，并在第二行输入新文件名正则表达式。",
-    "sequential_renaming_desc": "新文件名将有一个数值起始值附加到它， 并且它将通过向起始值添 +1 来按顺序显示。 在第一行输入新的文件名，并在第二行输入起始值。"
+    "sequential_renaming_desc": "新文件名将有一个数值起始值附加到它， 并且它将通过向起始值添加 1 来按顺序显示。 在第一行输入新的文件名，并在第二行输入起始值。"
   },
   "upload": {
     "add_as_task": "添加为任务",
+    "try_rapid": "尝试秒传",
     "upload-tips": "拖动文件到此处以上传，或点击：",
     "release": "松开以上传",
     "no_files_drag": "没有文件被拖入。",
@@ -162,19 +174,19 @@
   },
   "footer": {
     "powered_by": "PeiFeng.Li",
-    "manage": "Long • Cloud",
-    "guest": "Long • Cloud"
+    "manage": "iSweet • 2025",
+    "guest": "iSweet • 2025"
   },
   "search": {
     "search": "搜索",
-    "no_result": "Long • Search",
+    "no_result": "iSweet • Search",
     "scopes": {
       "all": "全部",
       "folder": "目录",
       "file": "文件"
     }
   },
-  "fetching_settings_failed": "正在启动服务，",
-  "get_current_user_failed": "用户信息验证失败： ",
-  "Loading storage, please wait": "请稍等一会再刷新页面哦"
+  "fetching_settings_failed": "请稍候，正在加载中...⏳",
+  "get_current_user_failed": "用户信息验证失败：",
+  "overwrite_existing": "覆盖现有文件"
 }
