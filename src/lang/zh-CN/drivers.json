@@ -3,7 +3,7 @@
     "cookie": "Cookie",
     "cookie-tips": "需要 QR 代码令牌和 cookie 中的一个",
     "limit_rate": "限制速率",
-    "limit_rate-tips": "限制所有 api 请求速率(1r/[limit_rate]s)",
+    "limit_rate-tips": "限制所有 api 请求率 ([limit]r/1s)",
     "page_size": "分页大小",
     "page_size-tips": "115 驱动程序的列表 API 的每页大小",
     "qrcode_source": "Qrcode 源",
@@ -69,6 +69,8 @@
   "139Yun": {
     "authorization": "Authorization",
     "cloud_id": "Cloud id",
+    "custom_upload_part_size": "自定义上传分片大小",
+    "custom_upload_part_size-tips": "0 表示根据VIP等级对应大小",
     "root_folder_id": "根文件夹ID",
     "type": "类型",
     "types": {
@@ -245,10 +247,8 @@
   },
   "BaiduPhoto": {
     "album_id": "相簿ID",
-    "client_id": "客户端ID",
-    "client_secret": "客户端密钥",
+    "cookie": "Cookie",
     "delete_origin": "删除源文件",
-    "refresh_token": "刷新令牌",
     "show_type": "展示类型",
     "show_types": {
       "root": "根",
@@ -318,6 +318,7 @@
     "add_filename_to_disposition-tips": "添加filename到Content-Disposition头中。",
     "bucket": "存储桶",
     "custom_host": "自定义HOST",
+    "enable_custom_host_presign": "启用自定义主机预签名",
     "endpoint": "Endpoint",
     "force_path_style": "强制路径样式",
     "list_object_version": "列出对象版本",
@@ -350,10 +351,48 @@
     "root_folder_path": "根文件夹路径",
     "username": "用户名"
   },
+  "FebBox": {
+    "client_id": "客户端ID",
+    "client_secret": "客户端密钥",
+    "page_size": "分页大小",
+    "page_size-tips": "FebBox 驱动程序每页的列表大小",
+    "root_folder_id": "根文件夹ID",
+    "sort_rule": "排序规则",
+    "sort_rules": {
+      "ext_asc": "扩展名正序",
+      "ext_desc": "扩展名倒序",
+      "name_asc": "名称升序",
+      "name_desc": "名称降序",
+      "size_asc": "大小升序",
+      "size_desc": "大小降序",
+      "update_asc": "修改时间正序",
+      "update_desc": "修改时间倒序"
+    },
+    "user_ip": "用户ip",
+    "user_ip-tips": "用户IP地址用于下载链接，可以加快下载"
+  },
   "FeijiPan": {
     "password": "密码",
     "root_folder_id": "根文件夹ID",
     "username": "用户名"
+  },
+  "GitHub API": {
+    "author_email": "作者电子邮件",
+    "author_name": "作者姓名",
+    "committer_email": "佣金电子邮件",
+    "committer_name": "佣金名称",
+    "copy_commit_message": "复制提交消息",
+    "delete_commit_message": "删除提交消息",
+    "mkdir_commit_message": "Mkdir 提交消息",
+    "move_commit_message": "移动提交消息",
+    "owner": "所有者",
+    "put_commit_message": "放置提交消息",
+    "ref": "参考值",
+    "ref-tips": "默认情况下，一个分支、一个标签或提交 SHA, 主要分支。",
+    "rename_commit_message": "重命名提交消息",
+    "repo": "复数",
+    "root_folder_path": "根文件夹路径",
+    "token": "令牌"
   },
   "GoogleDrive": {
     "chunk_size": "分片大小",
@@ -436,11 +475,11 @@
     "tenant_url_prefix-tips": "租户地址前缀"
   },
   "LenovoNasShare": {
-    "host": "Host",
-    "host-tips": "你可以改成你的局域网",
+    "host": "主机地址",
+    "host-tips": "你可以将它更改为你的局域网地址",
     "root_folder_path": "根文件夹路径",
     "share_id": "分享ID",
-    "share_id-tips": "分享链接中最后一个 / 后面的部分",
+    "share_id-tips": "最后一个/共享链接后的部分",
     "share_pwd": "分享密码",
     "share_pwd-tips": "分享链接的密码"
   },
@@ -452,10 +491,12 @@
     "show_hidden": "显示隐藏",
     "show_hidden-tips": "显示隐藏目录以及文件",
     "thumb_cache_folder": "缩略图缓存文件夹",
-    "thumb_concurrency": "并发缩略图",
-    "thumb_concurrency-tips": "并发缩略图生成的数量。控制可以并行生成多少个缩略图.",
+    "thumb_concurrency": "缩略图并发数",
+    "thumb_concurrency-tips": "同时生成缩略图的数量。这控制了可以并行生成多少缩略图。",
     "thumbnail": "缩略图",
-    "thumbnail-tips": "启用缩略图"
+    "thumbnail-tips": "启用缩略图",
+    "video_thumb_pos": "视频缩略图",
+    "video_thumb_pos-tips": "视频缩略图的位置。如果该值是一个数字(整数点浮点)，它代表几秒钟的时间。 如果值以“%”结尾，则代表视频持续时间的百分比。"
   },
   "MediaTrack": {
     "access_token": "访问令牌",
@@ -466,7 +507,7 @@
       "updated_at": "修改时间"
     },
     "order_desc": "降序排列",
-    "project_id": "项目ID",
+    "project_id": "项目 ID",
     "root_folder_id": "根文件夹ID"
   },
   "Mega_nz": {
@@ -554,15 +595,10 @@
     "platform": "平台",
     "platforms": {
       "android": "安卓",
-      "pc": "Pc",
+      "pc": "Pc平台",
       "web": "网页"
     },
     "refresh_token": "刷新令牌",
-    "refresh_token_method": "刷新令牌方法",
-    "refresh_token_methods": {
-      "http": "Http",
-      "oauth2": "Oauth2"
-    },
     "root_folder_id": "根文件夹ID",
     "use_low_latency_address": "使用低延迟地址",
     "username": "用户名"
@@ -573,7 +609,7 @@
     "platform": "平台",
     "platforms": {
       "android": "安卓",
-      "pc": "Pc",
+      "pc": "Pc平台",
       "web": "网页"
     },
     "root_folder_id": "根文件夹ID",
@@ -600,8 +636,8 @@
   },
   "QuarkTV": {
     "device_id": "设备id",
-    "query_token": "令牌",
-    "query_token-tips": "不要编辑'",
+    "query_token": "查询令牌",
+    "query_token-tips": "不要编辑",
     "refresh_token": "刷新令牌",
     "root_folder_id": "根文件夹ID"
   },
@@ -620,6 +656,7 @@
     "add_filename_to_disposition-tips": "添加filename到Content-Disposition头中。",
     "bucket": "存储桶",
     "custom_host": "自定义HOST",
+    "enable_custom_host_presign": "启用自定义主机预签名",
     "endpoint": "Endpoint",
     "force_path_style": "强制路径样式",
     "list_object_version": "列出对象版本",
@@ -862,8 +899,8 @@
   },
   "UCTV": {
     "device_id": "设备id",
-    "query_token": "令牌",
-    "query_token-tips": "不要编辑'",
+    "query_token": "查询令牌",
+    "query_token-tips": "不要编辑",
     "refresh_token": "刷新令牌",
     "root_folder_id": "根文件夹ID"
   },
@@ -880,7 +917,8 @@
     "head_size": "Head 大小",
     "head_size-tips": "使用HEAD方法获取文件大小，但可能失败。",
     "url_structure": "Url 结构",
-    "url_structure-tips": "结构:\nFolderName:\n  [FileName:][FileSize:][Modified:]Url"
+    "url_structure-tips": "结构:\nFolderName:\n  [FileName:][FileSize:][Modified:]Url",
+    "writable": "可写"
   },
   "VTencent": {
     "cookie": "Cookie",
@@ -998,7 +1036,9 @@
     "Doge": {},
     "Dropbox": {},
     "FTP": {},
+    "FebBox": {},
     "FeijiPan": {},
+    "GitHub API": {},
     "GoogleDrive": {},
     "GooglePhoto": {},
     "HalalCloud": {},
@@ -1071,16 +1111,18 @@
     "Doge": "多吉云",
     "Dropbox": "Dropbox",
     "FTP": "FTP",
+    "FebBox": "FebBox",
     "FeijiPan": "飞机盘",
+    "GitHub API": "GitHub API",
     "GoogleDrive": "谷歌云盘",
     "GooglePhoto": "谷歌相册",
     "HalalCloud": "HalalCloud",
     "ILanZou": "蓝奏云优享版",
     "IPFS API": "IPFS API",
-    "KodBox": "KodBox",
+    "KodBox": "可道云",
     "Lanzou": "蓝奏云",
     "Lark": "Lark (飞书)",
-    "LenovoNasShare": "LenovoNasShare",
+    "LenovoNasShare": "联想家庭储存链接分享",
     "Local": "本机存储",
     "MediaTrack": "分秒帧",
     "Mega_nz": "Mega 网盘",
@@ -1108,7 +1150,7 @@
     "ThunderXExpert": "迅雷X专家版",
     "Trainbit": "Trainbit",
     "UC": "UC",
-    "UCTV": "UCTV",
+    "UCTV": "UC TV",
     "USS": "又拍云存储",
     "UrlTree": "地址树",
     "VTencent": "腾讯智能创作平台",
