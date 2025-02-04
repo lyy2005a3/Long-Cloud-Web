@@ -1,21 +1,21 @@
 import { Text, useColorModeValue, VStack } from "@hope-ui/solid"
 import {
+  createEffect,
+  createSignal,
+  lazy,
+  Match,
+  on,
   Suspense,
   Switch,
-  Match,
-  lazy,
-  createEffect,
-  on,
-  createSignal,
 } from "solid-js"
-import { FullLoading, Error, LinkWithBase } from "~/components"
+import { Error, FullLoading, LinkWithBase } from "~/components"
 import { resetGlobalPage, useObjTitle, usePath, useRouter, useT } from "~/hooks"
 import {
   objStore,
-  recordScroll,
-  /*layout,*/ State,
   password,
+  recordHistory,
   setPassword,
+  /*layout,*/ State,
 } from "~/store"
 
 const Folder = lazy(() => import("./folder/Folder"))
@@ -38,10 +38,10 @@ export const Obj = () => {
     on(pathname, (pathname) => {
       useObjTitle()
       if (!first) {
+        recordHistory(lastPathname)
         resetGlobalPage()
       }
       first = false
-      recordScroll(lastPathname, window.scrollY)
       handlePathChange(pathname)
       lastPathname = pathname
     }),
