@@ -193,6 +193,7 @@ export type ModalFolderChooseProps = {
   type?: string
   defaultValue?: string
   loading?: boolean
+  footerSlot?: JSXElement
   children?: JSXElement
   header: string
 }
@@ -226,6 +227,7 @@ export const ModalFolderChoose = (props: ModalFolderChooseProps) => {
           />
         </ModalBody>
         <ModalFooter display="flex" gap="$2">
+          <Show when={props.footerSlot}>{props.footerSlot}</Show>
           <Button onClick={props.onClose} colorScheme="neutral">
             {t("global.cancel")}
           </Button>

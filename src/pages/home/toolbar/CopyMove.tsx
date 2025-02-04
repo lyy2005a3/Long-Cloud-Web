@@ -1,5 +1,5 @@
-import { createDisclosure } from "@hope-ui/solid"
-import { onCleanup } from "solid-js"
+import { Checkbox, createDisclosure } from "@hope-ui/solid"
+import { createSignal, onCleanup } from "solid-js"
 import { ModalFolderChoose } from "~/components"
 import { useFetch, usePath, useRouter, useT } from "~/hooks"
 import { selectedObjs } from "~/store"
@@ -11,9 +11,11 @@ export const Copy = () => {
   const [loading, ok] = useFetch(fsCopy)
   const { pathname } = useRouter()
   const { refresh } = usePath()
+  const [overwrite, setOverwrite] = createSignal(false)
   const handler = (name: string) => {
     if (name === "copy") {
       onOpen()
+      setOverwrite(false)
     }
   }
   bus.on("tool", handler)
@@ -26,11 +28,23 @@ export const Copy = () => {
       opened={isOpen()}
       onClose={onClose}
       loading={loading()}
+      footerSlot={
+        <Checkbox
+          mr="auto"
+          checked={overwrite()}
+          onChange={() => {
+            setOverwrite(!overwrite())
+          }}
+        >
+          {t("home.overwrite_existing")}
+        </Checkbox>
+      }
       onSubmit={async (dst) => {
         const resp = await ok(
           pathname(),
           dst,
           selectedObjs().map((obj) => obj.name),
+          overwrite(),
         )
         handleRespWithNotifySuccess(resp, () => {
           refresh()
@@ -47,9 +61,11 @@ export const Move = () => {
   const [loading, ok] = useFetch(fsMove)
   const { pathname } = useRouter()
   const { refresh } = usePath()
+  const [overwrite, setOverwrite] = createSignal(false)
   const handler = (name: string) => {
     if (name === "move") {
       onOpen()
+      setOverwrite(false)
     }
   }
   bus.on("tool", handler)
@@ -62,11 +78,23 @@ export const Move = () => {
       opened={isOpen()}
       onClose={onClose}
       loading={loading()}
+      footerSlot={
+        <Checkbox
+          mr="auto"
+          checked={overwrite()}
+          onChange={() => {
+            setOverwrite(!overwrite())
+          }}
+        >
+          {t("home.overwrite_existing")}
+        </Checkbox>
+      }
       onSubmit={async (dst) => {
         const resp = await ok(
           pathname(),
           dst,
           selectedObjs().map((obj) => obj.name),
+          overwrite(),
         )
         handleRespWithNotifySuccess(resp, () => {
           refresh()
