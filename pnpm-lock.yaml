@@ -32,6 +32,9 @@ importers:
       '@stitches/core':
         specifier: ^1.2.8
         version: 1.2.8
+      '@types/qrcode':
+        specifier: ^1.5.5
+        version: 1.5.5
       '@viselect/vanilla':
         specifier: ^3.5.0
         version: 3.5.0
@@ -144,9 +147,6 @@ importers:
       '@types/node':
         specifier: ^20.0.0
         version: 20.0.0
-      '@types/qrcode':
-        specifier: ^1.5.5
-        version: 1.5.5
       '@types/sha256':
         specifier: ^0.2.0
         version: 0.2.0
@@ -1081,7 +1081,7 @@ packages:
 
   hash-wasm@4.12.0:
     resolution: {integrity: sha512-+/2B2rYLb48I/evdOIhP+K/DD2ca2fgBjp6O+GBEnCDk2e4rpeXIK8GvIyRPjTezgmWn9gmKwkQjjx6BtqDHVQ==}
-  
+
   hast-to-hyperscript@10.0.1:
     resolution: {integrity: sha512-dhIVGoKCQVewFi+vz3Vt567E4ejMppS1haBRL6TEmeLeJVB1i/FJIIg/e6s1Bwn0g5qtYojHEKvyGA+OZuyifw==}
 
