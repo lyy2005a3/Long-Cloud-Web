@@ -13,32 +13,32 @@ import {
   selectIndex,
 } from "~/store"
 import { isMobile } from "~/utils/compatibility"
- import { StoreObj } from "~/types"
+import { StoreObj } from "~/types"
 
- let selectedCache: StoreObj[] | null = null
+let selectedCache: StoreObj[] | null = null
 
 export function useSelectWithMouse() {
   const isMouseSupported = () => !isMobile && checkboxOpen()
-   const openWithDoubleClick = () =>
-     isMouseSupported() && local["open_item_on_checkbox"] === "dblclick"
-   const toggleWithClick = () =>
-     isMouseSupported() &&
-     local["open_item_on_checkbox"] === "disable_while_checked" &&
-     haveSelected()
- 
-   const saveSelectionCache = () => {
-     selectedCache = selectedObjs()
-   }
- 
-   const restoreSelectionCache = () => {
-     if (selectedCache === null) return false
-     for (let i = 0; i < objStore.objs.length; ++i) {
-       selectIndex(i, selectedCache.indexOf(objStore.objs[i]) >= 0)
-     }
-     return true
-   }
+  const openWithDoubleClick = () =>
+    isMouseSupported() && local["open_item_on_checkbox"] === "dblclick"
+  const toggleWithClick = () =>
+    isMouseSupported() &&
+    local["open_item_on_checkbox"] === "disable_while_checked" &&
+    haveSelected()
 
-   const clearSelectionCache = () => {
+  const saveSelectionCache = () => {
+    selectedCache = selectedObjs()
+  }
+
+  const restoreSelectionCache = () => {
+    if (selectedCache === null) return false
+    for (let i = 0; i < objStore.objs.length; ++i) {
+      selectIndex(i, selectedCache.indexOf(objStore.objs[i]) >= 0)
+    }
+    return true
+  }
+
+  const clearSelectionCache = () => {
     selectedCache = null
   }
 

@@ -59,7 +59,7 @@ export const ImageItem = (props: { obj: StoreObj; index: number }) => {
         }}
       >
         <Center w="$full" pos="relative">
-        <Show when={checkboxOpen()}>
+          <Show when={checkboxOpen()}>
             <ItemCheckbox
               pos="absolute"
               left="$1"

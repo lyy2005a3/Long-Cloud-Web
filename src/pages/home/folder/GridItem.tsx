@@ -52,7 +52,7 @@ export const GridItem = (props: { obj: StoreObj; index: number }) => {
         as={LinkWithPush}
         href={props.obj.name}
         cursor={
-           openWithDoubleClick() || toggleWithClick() ? "default" : "pointer"
+          openWithDoubleClick() || toggleWithClick() ? "default" : "pointer"
         }
         bgColor={props.obj.selected ? hoverColor() : undefined}
         on:dblclick={() => {
@@ -63,11 +63,11 @@ export const GridItem = (props: { obj: StoreObj; index: number }) => {
         on:click={(e: MouseEvent) => {
           e.preventDefault()
           if (openWithDoubleClick()) return
-           if (e.ctrlKey || e.metaKey || e.shiftKey) return
-           if (!restoreSelectionCache()) return
-           if (toggleWithClick())
-             return selectIndex(props.index, !props.obj.selected)
-           to(pushHref(props.obj.name))
+          if (e.ctrlKey || e.metaKey || e.shiftKey) return
+          if (!restoreSelectionCache()) return
+          if (toggleWithClick())
+            return selectIndex(props.index, !props.obj.selected)
+          to(pushHref(props.obj.name))
         }}
         onMouseEnter={() => {
           setPathAs(props.obj.name, props.obj.is_dir, true)

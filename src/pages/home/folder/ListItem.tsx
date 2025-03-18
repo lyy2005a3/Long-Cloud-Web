@@ -74,11 +74,11 @@ export const ListItem = (props: { obj: StoreObj; index: number }) => {
         on:click={(e: MouseEvent) => {
           e.preventDefault()
           if (openWithDoubleClick()) return
-           if (e.ctrlKey || e.metaKey || e.shiftKey) return
-           if (!restoreSelectionCache()) return
-           if (toggleWithClick())
-             return selectIndex(props.index, !props.obj.selected)
-           to(pushHref(props.obj.name))
+          if (e.ctrlKey || e.metaKey || e.shiftKey) return
+          if (!restoreSelectionCache()) return
+          if (toggleWithClick())
+            return selectIndex(props.index, !props.obj.selected)
+          to(pushHref(props.obj.name))
         }}
         onMouseEnter={() => {
           setPathAs(props.obj.name, props.obj.is_dir, true)
