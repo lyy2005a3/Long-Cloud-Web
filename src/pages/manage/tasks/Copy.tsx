@@ -11,10 +11,10 @@ const Copy = () => {
       canRetry
       nameAnalyzer={{
         regex: /^copy \[(.*\/([^\/]*))]\((.*\/([^\/]*))\) to \[(.+)]\((.+)\)$/,
-         title: (matches) => {
-           if (matches[4] !== "") return matches[4]
-           return matches[2] === "" ? "/" : matches[2]
-         },
+        title: (matches) => {
+          if (matches[4] !== "") return matches[4]
+          return matches[2] === "" ? "/" : matches[2]
+        },
         attrs: {
           [t(`tasks.attr.copy.src`)]: (matches) =>
             getPath(matches[1], matches[3]),
