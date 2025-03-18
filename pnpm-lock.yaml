@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@egjs/view360':
+        specifier: 4.0.0-beta.7
+        version: 4.0.0-beta.7
       '@github/webauthn-json':
         specifier: ^2.1.1
         version: 2.1.1
@@ -32,9 +35,6 @@ importers:
       '@stitches/core':
         specifier: ^1.2.8
         version: 1.2.8
-      '@types/qrcode':
-        specifier: ^1.5.5
-        version: 1.5.5
       '@viselect/vanilla':
         specifier: ^3.5.0
         version: 3.5.0
@@ -42,17 +42,20 @@ importers:
         specifier: ^1.10.1
         version: 1.10.1
       artplayer:
-        specifier: ^5.1.6
-        version: 5.1.7
+        specifier: ^5.0.9
+        version: 5.0.9
       artplayer-plugin-danmuku:
-        specifier: ^5.1.4
-        version: 5.1.4
+        specifier: ^5.0.1
+        version: 5.0.1
       asciinema-player:
-        specifier: ^3.8.0
-        version: 3.8.0
+        specifier: ^3.6.3
+        version: 3.6.3
       axios:
         specifier: ^1.0.0
         version: 1.1.3
+      bencode:
+        specifier: ^4.0.0
+        version: 4.0.0
       chardet:
         specifier: ^2.0.0
         version: 2.0.0
@@ -80,6 +83,9 @@ importers:
       libass-wasm:
         specifier: ^4.1.0
         version: 4.1.0
+      lightgallery:
+        specifier: ^2.5.0
+        version: 2.5.0
       mark.js:
         specifier: ^8.11.1
         version: 8.11.1
@@ -125,9 +131,6 @@ importers:
       streamsaver:
         specifier: ^2.0.6
         version: 2.0.6
-      sweetphotos:
-        specifier: ^2024.6.26
-        version: 2024.11.27
       typescript-natural-sort:
         specifier: ^0.7.2
         version: 0.7.2
@@ -138,6 +141,9 @@ importers:
       '@hrgui/libass-wasm-ts':
         specifier: ^1.0.3
         version: 1.0.3
+      '@types/bencode':
+        specifier: ^2.0.4
+        version: 2.0.4
       '@types/crypto-js':
         specifier: ^4.2.2
         version: 4.2.2
@@ -147,6 +153,9 @@ importers:
       '@types/node':
         specifier: ^20.0.0
         version: 20.0.0
+      '@types/qrcode':
+        specifier: ^1.5.5
+        version: 1.5.5
       '@types/sha256':
         specifier: ^0.2.0
         version: 0.2.0
@@ -339,9 +348,21 @@ packages:
     resolution: {integrity: sha512-MJvnbEiiNkpjo+LknnmRrqbY1GPUUggjv+wQVjetM/AONoupqRALB7I6jGqNUAZsKcRIEu2J6FRFvsczljjsaQ==}
     engines: {node: '>=6.9.0'}
 
+  '@cfcs/core@0.0.24':
+    resolution: {integrity: sha512-feB38qu+eDk0Pggh/yR7gjaNmvUYA2uCxHP3Pz2MLE4LZ/9jPdtu8bzCSI47yTEhWyZCF5Pk698hdz8IN2mTjA==}
+
   '@crowdin/cli@3.7.10':
     resolution: {integrity: sha512-L0sjeEv4bn7LHNYsKxl2aTrah16u1ThufN0xvMMH7o53lD29llvVfAD9jVOttSl/kyQ+mMDY8GLzjPRNFdLJqQ==}
     hasBin: true
+
+  '@egjs/component@3.0.5':
+    resolution: {integrity: sha512-cLcGizTrrUNA2EYE3MBmEDt2tQv1joVP1Q3oDisZ5nw0MZDx2kcgEXM+/kZpfa/PAkFvYVhRUZwytIQWoN3V/w==}
+
+  '@egjs/imready@1.4.1':
+    resolution: {integrity: sha512-JIOBs4lB7FYdsKi5uvz2j3SObX8eShtZjtqlOH41tm185aJOQZwiKBK8+V4MxzG4X6DqVhpdN8UcuVwBbElfsg==}
+
+  '@egjs/view360@4.0.0-beta.7':
+    resolution: {integrity: sha512-prVTTxuQ1/k59NM7G0tm58k2vPHGoaExoFr5E7MoJaSGF56Otj4okQHAxxosXH87aQLN0feZMtBlsKz0b/7zEw==}
 
   '@esbuild/linux-loong64@0.14.54':
     resolution: {integrity: sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==}
@@ -477,6 +498,9 @@ packages:
   '@stitches/core@1.2.8':
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
 
+  '@types/bencode@2.0.4':
+    resolution: {integrity: sha512-sirDu3HUSG7jZMlhTDvCzSFiPR4lkUYBQA75CoMi6DEf2alFZWJWtHgfjBbb9PachPZhPMB1IlH09deyMNBipQ==}
+
   '@types/crypto-js@4.2.2':
     resolution: {integrity: sha512-sDOLlVbHhXpAUAL0YHDUUwDZf3iN4Bwi4W6a0W0b+QcAezUbRtH4FVb+9J4h+XFPW7l/gQ9F8qC7P+Ec4k8QVQ==}
 
@@ -537,6 +561,9 @@ packages:
   '@types/unist@2.0.6':
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
 
+  '@types/webxr@0.5.19':
+    resolution: {integrity: sha512-4hxA+NwohSgImdTSlPXEqDqqFktNgmTXQ05ff1uWam05tNGroCMp4G+4XVl6qWm1p7GQ/9oD41kAYsSssF6Mzw==}
+
   '@viselect/vanilla@3.5.0':
     resolution: {integrity: sha512-drPkEQ/0CZl/c7D0gx5lWkY6iCdbyJm6KWFJpY2oQEKEnCrW9LUdQOsbNP/RG2L8BNUaiDBmwyTTW2RYIroZhA==}
 
@@ -587,14 +614,14 @@ packages:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
 
-  artplayer-plugin-danmuku@5.1.4:
-    resolution: {integrity: sha512-f2gJ9HsvSmOwg6UdNcWCUkSI6WmfkTiQKVDWr+pRJF9jQ2wK8c4YjNJ11SY63H5OGlaJBSvWWyNVdFHOX7pUbg==}
+  artplayer-plugin-danmuku@5.0.1:
+    resolution: {integrity: sha512-b6/Y4/+X0rNmnqS5+zzQgow+WW4iVT8eFv4LAUzJgIyORIcf5Gn00Dy0PZ+kwGb1VJy0CUCRK6gVVvh0tWsRAg==}
 
-  artplayer@5.1.7:
-    resolution: {integrity: sha512-N/QdNlTwsIHUsWOHMPj0pq97v3qmgXZHfhy1q7I+8YN3/XakJiJJyVJgGaeBjU+y/fUIrzBhwpBaX+NFwK9/qw==}
+  artplayer@5.0.9:
+    resolution: {integrity: sha512-IM/DShYdmKFEA9jl08LYbTK2Jfz9s7qIjEH0xWjnxvVArUKZZKcoqwr6i54U0c4grtc/Uvb4wtCd78kvtSVlgw==}
 
-  asciinema-player@3.8.0:
-    resolution: {integrity: sha512-yFoAcjFK9WJ0D+aagkT0YXOWRbyXoOe/TQHq07oQP6prItXQkWn46fdvUb6zqJu2AywmY8VjBEwZ6ciL8IbezQ==}
+  asciinema-player@3.6.3:
+    resolution: {integrity: sha512-62aDgLpbuduhmpFfNgPOzf6fOluACLsftVnjpWJjUXX6dqhqTckFqWoJ+ayA0XjSlZ9l9wXTcJqRqvAAIpMblg==}
 
   astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
@@ -624,6 +651,14 @@ packages:
 
   balloon-css@0.5.2:
     resolution: {integrity: sha512-zheJpzwyNrG4t39vusA67v3BYg1HTVXOF8cErPEHzWK88PEOFwgo6Ea9VHOgOWNMgeuOtFVtB73NE2NWl9uDyQ==}
+
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
+
+  bencode@4.0.0:
+    resolution: {integrity: sha512-AERXw18df0pF3ziGOCyUjqKZBVNH8HV3lBxnx5w0qtgMIk4a1wb9BkcCQbkp9Zstfrn/dzRwl7MmUHHocX3sRQ==}
+    engines: {node: '>=12.20.0'}
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -1053,6 +1088,9 @@ packages:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
 
+  gl-matrix@3.4.3:
+    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
+
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -1240,6 +1278,10 @@ packages:
 
   libass-wasm@4.1.0:
     resolution: {integrity: sha512-+RbYT/uuI6VHExCmGyUuMg3A2gQOaCRTzSn8GGDSf3q4cEoUNiINd9u4RGfZXA1UKafW+Hv8bmcKIX4FKbSh0Q==}
+
+  lightgallery@2.5.0:
+    resolution: {integrity: sha512-pzg5gwflLGlKaK1VqDKpb7yqQ/WSV/TxFaHRR7ld7G5iOI9gkJZ2qKKo2lyqvTvu8yAqNYXoU0w9O/Dll6POkw==}
+    engines: {node: '>=6.0.0'}
 
   lilconfig@2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
@@ -1828,10 +1870,6 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  sweetphotos@2024.11.27:
-    resolution: {integrity: sha512-peVQbaFDNK+6p6hCTaVJqWRc+HKrWbhPGWXF49II86uGTBaWpL8TDR021dOy0yDwFs8QOCTqfO7rJvOiG/IrNQ==}
-    engines: {node: '>=6.0.0'}
-
   systemjs@6.12.3:
     resolution: {integrity: sha512-TtYUN86Hs8V1QGAoj9ad1xmJmZS9Lurfi8Iu8QWOKaUDDuTH0Bpfdxz9qZIdxsmvAg3WMQnZ5/pkQvloh2sr/Q==}
 
@@ -1887,6 +1925,9 @@ packages:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+
+  uint8-util@2.2.5:
+    resolution: {integrity: sha512-/QxVQD7CttWpVUKVPz9znO+3Dd4BdTSnFQ7pv/4drVhC9m4BaL2LFHTkJn6EsYoxT79VDq/2Gg8L0H22PrzyMw==}
 
   unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
@@ -2234,12 +2275,30 @@ snapshots:
       '@babel/helper-validator-identifier': 7.18.6
       to-fast-properties: 2.0.0
 
+  '@cfcs/core@0.0.24':
+    dependencies:
+      '@egjs/component': 3.0.5
+
   '@crowdin/cli@3.7.10':
     dependencies:
       njre: 0.2.0
       shelljs: 0.8.5
     transitivePeerDependencies:
       - encoding
+
+  '@egjs/component@3.0.5': {}
+
+  '@egjs/imready@1.4.1':
+    dependencies:
+      '@cfcs/core': 0.0.24
+      '@egjs/component': 3.0.5
+
+  '@egjs/view360@4.0.0-beta.7':
+    dependencies:
+      '@egjs/component': 3.0.5
+      '@egjs/imready': 1.4.1
+      '@types/webxr': 0.5.19
+      gl-matrix: 3.4.3
 
   '@esbuild/linux-loong64@0.14.54':
     optional: true
@@ -2392,6 +2451,10 @@ snapshots:
 
   '@stitches/core@1.2.8': {}
 
+  '@types/bencode@2.0.4':
+    dependencies:
+      '@types/node': 20.0.0
+
   '@types/crypto-js@4.2.2': {}
 
   '@types/debug@4.1.7':
@@ -2451,6 +2514,8 @@ snapshots:
 
   '@types/unist@2.0.6': {}
 
+  '@types/webxr@0.5.19': {}
+
   '@viselect/vanilla@3.5.0': {}
 
   '@vitejs/plugin-legacy@2.0.1(terser@5.14.2)(vite@3.0.8(terser@5.14.2))':
@@ -2496,13 +2561,13 @@ snapshots:
 
   array-union@2.1.0: {}
 
-  artplayer-plugin-danmuku@5.1.4: {}
+  artplayer-plugin-danmuku@5.0.1: {}
 
-  artplayer@5.1.7:
+  artplayer@5.0.9:
     dependencies:
       option-validator: 2.0.6
 
-  asciinema-player@3.8.0:
+  asciinema-player@3.6.3:
     dependencies:
       '@babel/runtime': 7.23.6
       solid-js: 1.4.8
@@ -2537,6 +2602,12 @@ snapshots:
   balanced-match@1.0.2: {}
 
   balloon-css@0.5.2: {}
+
+  base64-arraybuffer@1.0.2: {}
+
+  bencode@4.0.0:
+    dependencies:
+      uint8-util: 2.2.5
 
   boolbase@1.0.0: {}
 
@@ -2893,6 +2964,8 @@ snapshots:
 
   get-stream@6.0.1: {}
 
+  gl-matrix@3.4.3: {}
+
   glob-parent@5.1.2:
     dependencies:
       is-glob: 4.0.3
@@ -3095,6 +3168,8 @@ snapshots:
   kleur@4.1.5: {}
 
   libass-wasm@4.1.0: {}
+
+  lightgallery@2.5.0: {}
 
   lilconfig@2.0.6: {}
 
@@ -3865,8 +3940,6 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  sweetphotos@2024.11.27: {}
-
   systemjs@6.12.3: {}
 
   tabbable@5.3.3: {}
@@ -3913,6 +3986,10 @@ snapshots:
   typescript-natural-sort@0.7.2: {}
 
   typescript@4.7.4: {}
+
+  uint8-util@2.2.5:
+    dependencies:
+      base64-arraybuffer: 1.0.2
 
   unified@10.1.2:
     dependencies:

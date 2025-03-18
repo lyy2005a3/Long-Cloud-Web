@@ -32,6 +32,7 @@ export type ModalInputProps = {
   topSlot?: JSXElement
   bottomSlot?: JSXElement
   footerSlot?: JSXElement
+  onDrop?: (e: DragEvent, setValue: (value: string) => void) => void
 }
 export const ModalInput = (props: ModalInputProps) => {
   const [value, setValue] = createSignal(props.defaultValue ?? "")
@@ -90,7 +91,7 @@ export const ModalInput = (props: ModalInputProps) => {
       onClose={props.onClose}
       initialFocus="#modal-input"
     >
-      <ModalOverlay />
+      <ModalContent onDrop={(e) => props.onDrop?.(e, setValue)}>
       <ModalContent>
         {/* <ModalCloseButton /> */}
         <ModalHeader>{t(props.title)}</ModalHeader>
