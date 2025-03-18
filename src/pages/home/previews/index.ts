@@ -154,11 +154,11 @@ export const getPreviews = (
       extsContains(preview.exts, ext(file.name).toLowerCase())
     ) {
       const r = { name: preview.name, component: preview.component }
-       if (isPrior(preview.prior)) {
-         res.push(r)
-       } else {
-         subsequent.push(r)
-       }
+      if (isPrior(preview.prior)) {
+        res.push(r)
+      } else {
+        subsequent.push(r)
+      }
     }
   })
   // iframe previews
