@@ -44,20 +44,20 @@ const useRouter = () => {
     },
     pathname: pathname,
     search: location.search,
-     searchParams: location.query,
-     setSearchParams: (
-       params: SetParams,
-       options?: Partial<NavigateOptions>,
-     ) => {
-       const searchString = untrack(() =>
-         _mergeSearchString(location.search, params),
-       )
-       navigate(pathname() + searchString, {
-         scroll: false,
-         ...options,
-         resolve: true,
-       })
-     },
+    searchParams: location.query,
+    setSearchParams: (
+      params: SetParams,
+      options?: Partial<NavigateOptions>,
+    ) => {
+      const searchString = untrack(() =>
+        _mergeSearchString(location.search, params),
+      )
+      navigate(pathname() + searchString, {
+        scroll: false,
+        ...options,
+        resolve: true,
+      })
+    },
     params: params,
   }
 }

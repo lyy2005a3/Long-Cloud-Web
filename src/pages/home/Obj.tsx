@@ -36,11 +36,11 @@ export const Obj = () => {
   const { pathname, searchParams } = useRouter()
   const { handlePathChange, refresh } = usePath()
   const pagination = getPagination()
-   const page = createMemo(() => {
-     return pagination.type === "pagination"
-       ? parseInt(searchParams["page"]) || 1
-       : undefined
-   })
+  const page = createMemo(() => {
+    return pagination.type === "pagination"
+      ? parseInt(searchParams["page"]) || 1
+      : undefined
+  })
   let lastPathname = pathname()
   let lastPage = page()
   createEffect(

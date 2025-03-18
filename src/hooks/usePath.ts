@@ -35,7 +35,7 @@ export const getGlobalPage = () => {
 }
 export const setGlobalPage = (page: number) => {
   globalPage = page
-   // console.log("setGlobalPage", globalPage)
+  // console.log("setGlobalPage", globalPage)
 }
 export const resetGlobalPage = () => {
   setGlobalPage(1)
@@ -111,10 +111,10 @@ export const usePath = () => {
       return recoverHistory(path, index)
     } else if (IsDirRecord[path]) {
       log(`handle [${getHistoryKey(path, index)}] as folder`)
-       return handleFolder(path, index, undefined, undefined, force)
+      return handleFolder(path, index, undefined, undefined, force)
     } else {
       log(`handle [${getHistoryKey(path, index)}] as obj`)
-       return handleObj(path, index)
+      return handleObj(path, index)
     }
   }
 
