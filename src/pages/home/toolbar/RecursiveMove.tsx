@@ -79,21 +79,21 @@ export const RecursiveMove = () => {
         loading={loading()}
         footerSlot={
           <HStack mr="auto" flex="0.8" spacing="$1">
-             <SimpleSelect
-               value={conflictPolicy()}
-               onChange={(value) => setConflictPolicy(value)}
-             >
-               <SimpleOption value="cancel">
-                 {t("home.conflict_policy.cancel_if_exists")}
-               </SimpleOption>
-               <SimpleOption value="overwrite">
-                 {t("home.conflict_policy.overwrite_existing")}
-               </SimpleOption>
-               <SimpleOption value="skip">
-                 {t("home.conflict_policy.skip_existing")}
-               </SimpleOption>
-             </SimpleSelect>
-           </HStack>
+            <SimpleSelect
+              value={conflictPolicy()}
+              onChange={(value) => setConflictPolicy(value)}
+            >
+              <SimpleOption value="cancel">
+                {t("home.conflict_policy.cancel_if_exists")}
+              </SimpleOption>
+              <SimpleOption value="overwrite">
+                {t("home.conflict_policy.overwrite_existing")}
+              </SimpleOption>
+              <SimpleOption value="skip">
+                {t("home.conflict_policy.skip_existing")}
+              </SimpleOption>
+            </SimpleSelect>
+          </HStack>
         }
         onSubmit={async (dst) => {
           const resp = await ok(pathname(), dst, conflictPolicy())
