@@ -10,6 +10,7 @@ import {
 } from "@hope-ui/solid"
 import { useRouter, useT } from "~/hooks"
 import { JSXElement } from "solid-js"
+import { Link } from "@solidjs/router"
 
 type PasswordProps = {
   title: string

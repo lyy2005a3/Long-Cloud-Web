@@ -23,9 +23,11 @@
     "docs": "文档",
     "offline_download": "离线下载",
     "ldap": "LDAP",
-    "s3": "S3"
+    "s3": "S3",
+    "ftp": "FTP",
+    "traffic": "流量"
   },
-  "title": "Long • Cloud",
+  "title": "Long • 管理",
   "not_admin": "请使用管理员帐户登录",
   "logout_success": "退出成功",
   "send": "发送",
