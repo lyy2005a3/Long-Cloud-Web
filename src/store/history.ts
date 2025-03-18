@@ -13,7 +13,7 @@ const waitForNextFrame = () => {
   return new Promise((resolve) => setTimeout(resolve))
 }
 
-xport const getHistoryKey = (path: string, page?: number) => {
+export const getHistoryKey = (path: string, page?: number) => {
   return page && page > 1 ? `${path}?page=${page}` : path
 }
 
