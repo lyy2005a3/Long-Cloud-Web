@@ -160,11 +160,7 @@ const Profile = () => {
                 {t("global.go_login")}
               </Text> */}
               {/* 图片内容可以自己换或者不要都行 */}
-              <img
-                src="https://live2d.long2024.cn/yunp/404.png"
-                width="50%"
-                height="50%"
-              ></img>
+              <img src="https://live2d.long2024.cn/yunp/404.png" width="50%" height="50%"></img>
             </HStack>
           </>
         }

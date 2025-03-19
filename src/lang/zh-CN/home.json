@@ -172,13 +172,13 @@
     "success": "下载完成，太棒了！"
   },
   "footer": {
-    "powered_by": "PeiFeng.Li",
-    "manage": "iSweet • 2025",
-    "guest": "iSweet • 2025"
+    "powered_by": "Long-SHI",
+    "manage": "Long • 2025",
+    "guest": "Long • 2025"
   },
   "search": {
     "search": "搜索",
-    "no_result": "iSweet • Search",
+    "no_result": "Long • Search",
     "scopes": {
       "all": "全部",
       "folder": "目录",
