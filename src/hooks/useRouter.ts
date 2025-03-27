@@ -32,8 +32,8 @@ const useRouter = () => {
     },
     replace: (to: string) => {
       const path = encodePath(pathJoin(pathDir(location.pathname), to), true)
-       clearHistory(decodeURIComponent(path))
-       navigate(path)
+      clearHistory(decodeURIComponent(path))
+      navigate(path)
     },
     pushHref: (to: string): string => {
       return encodePath(pathJoin(pathname(), to))
