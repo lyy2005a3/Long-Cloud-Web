@@ -49,7 +49,7 @@ export const Center = () => {
               backdropFilter: "blur(15px)",
             }}
           >
-            <For each={["rename", "move", "copy", "delete"]}>
+            <For each={["rename", "move", "copy", "delete", "decompress"]}>
               {(name) => {
                 return (
                   <CenterIcon
