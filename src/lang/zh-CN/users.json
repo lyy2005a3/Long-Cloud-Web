@@ -23,7 +23,7 @@
   "disabled": "停用",
   "available": "已启用",
   "update_profile": "更新配置文件",
-  "update_profile_success": "更新成功，请重新登录。",
+  "update_profile_success": "更新个人资料成功，请重新登录。",
   "change_username": "修改用户名",
   "change_password": "更改密码",
   "change_password-tips": "不想改密码请留空",
@@ -49,11 +49,11 @@
   "webauthn_not_supported": "浏览器不支持或不安全",
   "ssh_keys": {
     "heading": "SSH 密钥",
-    "add_heading": "添加新密钥",
-    "title": "标题",
-    "key": "密钥",
-    "fingerprint": "指纹码",
-    "last_used": "最后使用时间",
+    "add_heading": "添加新的 SSH 密钥",
+    "title": "名称",
+    "key": "公钥",
+    "fingerprint": "指纹",
+    "last_used": "上次使用时间",
     "operation": "操作"
   }
 }

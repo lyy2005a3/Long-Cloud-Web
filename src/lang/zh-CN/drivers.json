@@ -9,13 +9,13 @@
     "qrcode_source": "Qrcode 源",
     "qrcode_source-tips": "选择二维码设备，默认 linux",
     "qrcode_sources": {
-      "alipaymini": "支付宝mini",
+      "alipaymini": "Alipaymini",
       "android": "安卓",
       "ios": "IOS",
       "qandroid": "Qandroid",
       "tv": "Tv",
       "web": "网页",
-      "wechatmini": "微信mini"
+      "wechatmini": "Wechatmini"
     },
     "qrcode_token": "二维码令牌",
     "qrcode_token-tips": "需要 QR 代码令牌和 cookie 中的一个",
@@ -24,10 +24,10 @@
   "115 Open": {
     "order_by": "排序",
     "order_bys": {
-      "file_name": "名称",
-      "file_size": "大小",
-      "file_type": "类型",
-      "user_utime": "修改时间"
+      "file_name": "文件名称",
+      "file_size": "文件大小",
+      "file_type": "文件类型",
+      "user_utime": "用户当前时间"
     },
     "order_direction": "排序方式",
     "order_directions": {
@@ -47,13 +47,13 @@
     "qrcode_source": "Qrcode 源",
     "qrcode_source-tips": "选择二维码设备，默认 linux",
     "qrcode_sources": {
-      "alipaymini": "支付宝mini",
+      "alipaymini": "Alipaymini",
       "android": "安卓",
       "ios": "IOS",
       "qandroid": "Qandroid",
       "tv": "Tv",
       "web": "网页",
-      "wechatmini": "微信mini"
+      "wechatmini": "Wechatmini"
     },
     "qrcode_token": "二维码令牌",
     "qrcode_token-tips": "需要 QR 代码令牌和 cookie 中的一个",
@@ -86,12 +86,12 @@
     "authorization": "Authorization",
     "cloud_id": "Cloud id",
     "custom_upload_part_size": "自定义上传分片大小",
-    "custom_upload_part_size-tips": "0 表示根据VIP等级对应大小",
+    "custom_upload_part_size-tips": "0 为自动设置",
     "root_folder_id": "根文件夹ID",
     "type": "类型",
     "types": {
       "family": "家庭云",
-      "group": "集团云",
+      "group": "共享群",
       "personal": "个人云",
       "personal_new": "新的个人盘"
     }
@@ -144,6 +144,7 @@
     "url": "链接"
   },
   "AList V3": {
+    "forward_archive_requests": "转发解压请求",
     "meta_password": "元信息密码",
     "pass_ua_to_upsteam": "传递UA至上游",
     "password": "密码",
@@ -155,11 +156,12 @@
   "Alias": {
     "download_concurrency": "下载并发",
     "download_concurrency-tips": "需要启用代理",
-    "download_part_size": "下载分段尺寸",
-    "download_part_size-tips": "需要启用代理，单位：KB",
+    "download_part_size": "下载分片大小",
+    "download_part_size-tips": "需要启用代理。单位：KB",
     "paths": "路径",
     "protect_same_name": "保护同名",
-    "protect_same_name-tips": "保护同名的文件不被删除或重命名"
+    "protect_same_name-tips": "保护同名的文件不被删除或重命名",
+    "writable": "可写"
   },
   "Aliyundrive": {
     "internal_upload": "内部上传",
@@ -340,7 +342,7 @@
     "add_filename_to_disposition-tips": "添加filename到Content-Disposition头中。",
     "bucket": "存储桶",
     "custom_host": "自定义HOST",
-    "enable_custom_host_presign": "启用自定义主机预签名",
+    "enable_custom_host_presign": "启用自定义HOST签名",
     "endpoint": "Endpoint",
     "force_path_style": "强制路径样式",
     "list_object_version": "列出对象版本",
@@ -357,6 +359,10 @@
     "session_token": "会话令牌",
     "sign_url_expire": "签名链接有效期"
   },
+  "Doubao": {
+    "cookie": "Cookie",
+    "root_folder_id": "根文件夹ID"
+  },
   "Dropbox": {
     "client_id": "客户端ID",
     "client_id-tips": "如果你没有，请留空",
@@ -368,7 +374,7 @@
   },
   "FTP": {
     "address": "地址",
-    "encoding": "编码",
+    "encoding": "",
     "password": "密码",
     "root_folder_path": "根文件夹路径",
     "username": "用户名"
@@ -377,7 +383,7 @@
     "client_id": "客户端ID",
     "client_secret": "客户端密钥",
     "page_size": "分页大小",
-    "page_size-tips": "FebBox 驱动程序每页的列表大小",
+    "page_size-tips": "list api per page size of FebBox driver",
     "root_folder_id": "根文件夹ID",
     "sort_rule": "排序规则",
     "sort_rules": {
@@ -394,22 +400,22 @@
     "user_ip-tips": "用户IP地址用于下载链接，可以加快下载"
   },
   "FeijiPan": {
-    "ip": "IP",
+    "ip": "Ip",
     "password": "密码",
     "root_folder_id": "根文件夹ID",
     "username": "用户名"
   },
   "GitHub API": {
-    "author_email": "修改作者电子邮件",
-    "author_name": "修改作者名称",
+    "author_email": "提交作者电子邮件",
+    "author_name": "提交作者姓名",
     "committer_email": "提交者电子邮件",
     "committer_name": "提交者名称",
     "copy_commit_message": "复制操作提交消息",
     "delete_commit_message": "删除操作提交消息",
     "gh_proxy": "Gh 代理",
-    "gh_proxy-tips": "GitHub 代理, 例如: https://ghproxy.net/raw.githubusercontent.com 或者 https://gh-proxy.com/raw.githubusercontent.com",
-    "gpg_key_passphrase": "GPG 密钥密码",
-    "gpg_private_key": "GPG 私人密钥",
+    "gh_proxy-tips": "GitHub 代理，例如https://ghproxy.net/raw.githubusercontent.com 或 https://gh-proxy.com/raw.githubusercontent.com",
+    "gpg_key_passphrase": "Gpg 密钥密码",
+    "gpg_private_key": "Gpg 私钥",
     "mkdir_commit_message": "创建文件夹操作提交消息",
     "move_commit_message": "移动操作提交消息",
     "owner": "所有者",
@@ -422,15 +428,15 @@
     "token": "令牌"
   },
   "GitHub Releases": {
-    "gh_proxy": "Gh proxy",
-    "gh_proxy-tips": "GitHub 代理, 例如: https://ghproxy.net/github.com 或 https://gh-proxy.com/github.com ",
+    "gh_proxy": "Gh 代理",
+    "gh_proxy-tips": "GitHub proxy, e.g. https://ghproxy.net/github.com or https://gh-proxy.com/github.com ",
     "repo_structure": "仓库结构",
-    "repo_structure-tips": "结构：[路径：]org/repo",
+    "repo_structure-tips": "结构：[path：]org/repo",
     "root_folder_id": "根文件夹ID",
     "show_all_version": "显示所有版本",
     "show_all_version-tips": "显示所有版本",
-    "show_readme": "显示阅读次数",
-    "show_readme-tips": "显示 READMEC 文件，LICENSE 文件",
+    "show_readme": "显示自述文件",
+    "show_readme-tips": "显示 README、LICENSE 文件",
     "token": "令牌",
     "token-tips": "GitHub 令牌，如果您想要访问私有仓库或提高费率限制"
   },
@@ -467,7 +473,7 @@
     "upload_thread-tips": "1<=线程<=32"
   },
   "ILanZou": {
-    "ip": "IP",
+    "ip": "Ip",
     "password": "密码",
     "root_folder_id": "根文件夹ID",
     "username": "用户名"
@@ -634,8 +640,7 @@
   },
   "PikPak": {
     "captcha_token": "验证码",
-    "custom_low_latency_address": "自定义低延迟地址",
-    "device_id": "设备ID",
+    "device_id": "设备id",
     "disable_media_link": "禁用媒体链接",
     "password": "密码",
     "platform": "平台",
@@ -646,12 +651,10 @@
     },
     "refresh_token": "刷新令牌",
     "root_folder_id": "根文件夹ID",
-    "use_low_latency_address": "使用低延迟地址",
     "username": "用户名"
   },
   "PikPakShare": {
-    "custom_low_latency_address": "自定义低延迟地址",
-    "device_id": "设备ID",
+    "device_id": "设备id",
     "platform": "平台",
     "platforms": {
       "android": "安卓",
@@ -661,7 +664,6 @@
     "root_folder_id": "根文件夹ID",
     "share_id": "分享ID",
     "share_pwd": "分享密码",
-    "use_low_latency_address": "使用低延迟地址",
     "use_transcoding_address": "使用转码地址"
   },
   "Quark": {
@@ -702,7 +704,7 @@
     "add_filename_to_disposition-tips": "添加filename到Content-Disposition头中。",
     "bucket": "存储桶",
     "custom_host": "自定义HOST",
-    "enable_custom_host_presign": "启用自定义主机预签名",
+    "enable_custom_host_presign": "启用自定义HOST签名",
     "endpoint": "Endpoint",
     "force_path_style": "强制路径样式",
     "list_object_version": "列出对象版本",
@@ -1081,6 +1083,7 @@
     "Cloudreve": {},
     "Crypt": {},
     "Doge": {},
+    "Doubao": {},
     "Dropbox": {},
     "FTP": {},
     "FebBox": {},
@@ -1159,12 +1162,13 @@
     "Cloudreve": "Cloudreve",
     "Crypt": "Crypt",
     "Doge": "多吉云",
+    "Doubao": "豆包",
     "Dropbox": "Dropbox",
     "FTP": "FTP",
     "FebBox": "FebBox",
     "FeijiPan": "飞机盘",
     "GitHub API": "GitHub API",
-    "GitHub Releases": "GitHub 发布",
+    "GitHub Releases": "GitHub 发行",
     "GoogleDrive": "谷歌云盘",
     "GooglePhoto": "谷歌相册",
     "HalalCloud": "HalalCloud",
@@ -1186,7 +1190,7 @@
     "PikPak": "PikPak",
     "PikPakShare": "PikPak分享",
     "Quark": "夸克",
-    "QuarkTV": "夸克TV",
+    "QuarkTV": "Quark TV",
     "Quqi": "曲奇云盘",
     "S3": "对象存储",
     "SFTP": "SFTP",
