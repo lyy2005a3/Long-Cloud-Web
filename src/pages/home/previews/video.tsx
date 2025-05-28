@@ -1,7 +1,7 @@
 import { Box } from "@hope-ui/solid"
 import { createSignal, onCleanup, onMount } from "solid-js"
 import { useRouter, useLink } from "~/hooks"
-import { getSettingBool, objStore } from "~/store"
+import { getMainColor, getSettingBool, objStore } from "~/store"
 import { ObjType } from "~/types"
 import { ext, pathDir, pathJoin } from "~/utils"
 import Artplayer from "artplayer"
@@ -61,6 +61,7 @@ const Preview = () => {
     flip: true,
     playbackRate: true,
     aspectRatio: true,
+    screenshot: true,
     setting: true,
     hotkey: true,
     pip: true,
@@ -70,6 +71,7 @@ const Preview = () => {
     subtitleOffset: true,
     miniProgressBar: false,
     playsInline: true,
+    theme: getMainColor(),
     quality: [],
     // highlight: [],
     plugins: [AutoHeightPlugin],
@@ -80,6 +82,7 @@ const Preview = () => {
       // @ts-ignore
       "webkit-playsinline": true,
       playsInline: true,
+      crossOrigin: "anonymous",
     },
     type: ext(objStore.obj.name),
     customType: {
@@ -257,12 +260,9 @@ const Preview = () => {
         mode: 0,
         margin: [0, "0%"],
         antiOverlap: false,
-        useWorker: true,
         synchronousPlayback: false,
         lockTime: 5,
         maxLength: 100,
-        minWidth: 200,
-        maxWidth: 400,
         theme: "dark",
         heatmap: true,
       }),
