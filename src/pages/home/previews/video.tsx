@@ -72,6 +72,10 @@ const Preview = () => {
     miniProgressBar: false,
     playsInline: true,
     theme: getMainColor(),
+    // layers: [],
+    // settings: [],
+    // contextmenu: [],
+    controls: [],
     quality: [],
     // highlight: [],
     plugins: [AutoHeightPlugin],
@@ -285,6 +289,14 @@ const Preview = () => {
     player.on("video:ended", () => {
       if (!autoNext()) return
       next_video()
+    })
+    player.on("error", () => {
+      if (player.video.crossOrigin) {
+        console.log(
+          "Error detected. Trying to remove Cross-Origin attribute. Screenshot may not be available.",
+        )
+        player.video.crossOrigin = null
+      }
     })
   })
   onCleanup(() => {
