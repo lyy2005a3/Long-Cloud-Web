@@ -52,7 +52,7 @@ const Password = (props: PasswordProps) => {
           direction={{ "@initial": "column", "@sm": "row" }}
           columnGap="$1"
         >
-          <Text color="$info9" as={Link} href={`https://www.long2024.cn`}>
+          <Text color="$info9" as={Link} href={`https://long2025.top/my`}>
             获取授权(请联系主页Q)!
           </Text>
         </Flex>
