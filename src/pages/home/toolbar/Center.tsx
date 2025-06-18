@@ -12,7 +12,7 @@ import { CopyLink } from "./CopyLink"
 import { CenterIcon } from "./Icon"
 import { bus } from "~/utils"
 import { Download } from "./Download"
-import { Motion, Presence } from "@motionone/solid"
+import { Motion, Presence } from "solid-motionone"
 import { UserMethods } from "~/types"
 
 export const Center = () => {

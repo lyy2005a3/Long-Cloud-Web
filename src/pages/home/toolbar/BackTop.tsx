@@ -1,6 +1,6 @@
 import { Show, createSignal, onCleanup } from "solid-js"
 import { Box, Icon } from "@hope-ui/solid"
-import { Motion } from "@motionone/solid"
+import { Motion } from "solid-motionone"
 import { getMainColor } from "~/store"
 import { CgChevronDoubleUpO } from "solid-icons/cg"
 

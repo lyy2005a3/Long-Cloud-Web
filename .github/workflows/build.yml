@@ -38,7 +38,7 @@ jobs:
       - name: Checkout dist repo
         uses: actions/checkout@v4
         with:
-          repository: long2005a1/Long-Cloud-Dist
+          repository: long2005a3/Long-Cloud-Dist
           ref: dev
           path: Long-Cloud-Dist
           persist-credentials: false
@@ -68,5 +68,5 @@ jobs:
           github_token: ${{ secrets.MY_TOKEN }}
           branch: dev
           directory: Long-Cloud-Dist
-          repository: long2005a1/Long-Cloud-Dist
+          repository: long2005a3/Long-Cloud-Dist
           force: true
