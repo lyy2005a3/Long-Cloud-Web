@@ -166,10 +166,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Set Git Identity
-        run: |
-          git config --global user.name "Long Bot"
-          git config --global user.email "longbt@er.long2024.cn"
-
 permissions:
   contents: write
