@@ -94,7 +94,7 @@ jobs:
             --notes-file "${{ github.workspace }}-CHANGELOG.txt" \
             --draft=${{ github.event_name == 'workflow_dispatch' && inputs.draft || false }} \
             ${{ steps.version.outputs.tag_name }} \
-            dist/openlist-frontend-dist-v*.tar.gz
+            dist/Long-Cloud-dist-v*.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
