@@ -1,6 +1,6 @@
 import { Markdown, MaybeLoading } from "~/components"
 import { useFetchText } from "~/hooks"
-import { objStore } from "~/store"Add commentMore actions
+import { objStore } from "~/store"
 import { ext } from "~/utils"
 
 const MdPreview = () => {
