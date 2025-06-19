@@ -47,6 +47,6 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Long-Cloud-dist-dev-${{ github.sha }}
+          name: openlist-frontend-dist-dev-${{ github.sha }}
           path: dist/
           retention-days: 7
