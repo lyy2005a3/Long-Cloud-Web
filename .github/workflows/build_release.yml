@@ -1,10 +1,27 @@
+# This workflow is used to create a (pre-)release build of the OpenList frontend.
+#
+# This will:
+#
+# - Update the `package.json` version to the specified version (when triggered
+#   by `workflow_dispatch`), commit the changes and tag it.
+# - Upload the release assets to GitHub.
+# - Publish the package to npm.
+#
+# # Usage
+#
+# This workflow can be triggered by:
+#
+# - Pushing a tag that matches the pattern `v[0-9]+.[0-9]+.[0-9]+*` (semver format).
+# - Manually via the GitHub Actions UI with a version input.
+#
+# To create (pre-)release builds, we recommend that you use the `workflow_dispatch`.
+
 name: Release Build
 
 on:
   push:
     tags:
-      - "v*.*.*"
-      - "!v*.*.*-*"
+      - "v[0-9]+.[0-9]+.[0-9]+*"
   workflow_dispatch:
     inputs:
       version:
@@ -54,8 +71,8 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         uses: crazy-max/ghaction-import-gpg@v6
         with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          gpg_private_key: ${{ secrets.BOT_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.BOT_GPG_PASSPHRASE }}
           git_user_signingkey: true
           git_commit_gpgsign: true
           git_tag_gpgsign: true
@@ -115,18 +132,6 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Publish npm
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
-            echo "NPM_TOKEN not set, do dry run"
-            pnpm publish --dry-run --no-git-checks --access public
-          else
-            pnpm publish --no-git-checks --access public
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Upload Release Assets
         run: |
           # Delete local tag, or gh cli will complain about it.
@@ -139,6 +144,27 @@ jobs:
             dist/openlist-frontend-dist-v*.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          # Delete the generated dist tarball
+          rm -f dist/openlist-frontend-dist-v*.tar.gz
+
+          if ! jq -e '.name and .version' package.json > /dev/null; then
+            echo "Error: Invalid package.json"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "NPM_TOKEN not set, performing dry run"
+            pnpm publish --dry-run --no-git-checks --access public
+          else
+            echo "Publishing to npm..."
+            pnpm publish --no-git-checks --access public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 permissions:
   contents: write
