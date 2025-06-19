@@ -1,24 +1,24 @@
 {
-  "name": "alist-web",
+  "name": "openlist-frontend",
   "version": "0.0.0",
   "author": {
     "name": "Long",
     "email": "longbt@er.long2024.cn",
     "url": "https://long2025.top"
   },
-  "description": "The front end of Alist V3",
+  "description": "A new AList Fork to Anti Trust Crisis",
   "packageManager": "pnpm@9.9.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lyy2005a3/Long-Cloud-Web.git"
   },
   "bugs": {
-    "url": "https://github.com/alist-org/alist/issues"
+    "url": "https://github.com/OpenListTeam/OpenList/issues"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://alist.nn.ci",
+  "homepage": "https://openlist.team/",
   "scripts": {
     "crowdin:upload": "crowdin upload sources --auto-update",
     "crowdin:download": "crowdin download --verbose",
@@ -100,6 +100,6 @@
     "typescript-natural-sort": "^0.7.2"
   },
   "lint-staged": {
-    "**/*": "prettier --write"
+    "**/*.{js,ts,css,tsx,jsx,md,html,yml,yaml}": "prettier --write"
   }
 }

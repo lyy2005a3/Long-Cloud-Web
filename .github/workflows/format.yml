@@ -26,10 +26,8 @@ jobs:
       - name: Format
         run: pnpm run format
 
-      - name: Add, Commit and Push
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit and Push
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "style: format code with prettier"
-          commit_user_name: Isla
-          commit_user_email: bot@nn.ci
-          commit_author: "Isla <bot@nn.ci>"
+          # TODO: GPG sign: https://github.com/stefanzweifel/git-auto-commit-action?tab=readme-ov-file#signing-commits
+          commit_message: "[skip ci] style: format code with prettier"

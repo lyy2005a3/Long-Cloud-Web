@@ -1,63 +1,101 @@
-name: release
+name: Release Build
 
 on:
   push:
     tags:
-      - "*"
+      - "v*.*.*"
+      - "!v*.*.*-*"
+  workflow_dispatch:
+    inputs:
+      draft:
+        description: "Create draft release"
+        required: false
+        default: true
+        type: boolean
+      version:
+        description: "Version tag (for manual trigger, e.g., v1.0.0)"
+        required: false
+        type: string
 
 jobs:
   release:
-    strategy:
-      matrix:
-        platform: [ubuntu-latest]
     name: Release
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           registry-url: "https://registry.npmjs.org"
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 9
           run_install: false
 
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: Long-Cloud-Web
-          persist-credentials: false
-          fetch-depth: 0
-          submodules: recursive
-
-      - name: Checkout dist repo
-        uses: actions/checkout@v4
-        with:
-          repository: lyy2005a3/Long-Cloud-Dist
-          ref: main
-          path: Long-Cloud-Dist
-          persist-credentials: false
-          fetch-depth: 0
-
-      - name: Build
+      - name: Setup version for manual trigger
+        if: github.event_name == 'workflow_dispatch' && inputs.version
         run: |
-          mv Long-Cloud-Web/release.sh .
-          bash release.sh
+          git tag ${{ inputs.version }}
+          echo "Created temporary tag: ${{ inputs.version }}"
 
-      - name: Upload dist files
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.MY_TOKEN }}
-          branch: main
-          directory: Long-Cloud-Dist
-          repository: lyy2005a3/Long-Cloud-Dist
+      - name: Generate changelog
+        run: |
+          # Remove existing tag `rolling`, since `rolling` should always point to the latest commit
+          # This is necessary to avoid conflicts with the changelog generation
+          git tag -d rolling || true
 
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: compress/*
+          # Temporarily remove all pre-release tags (tags containing '-')
+          # This prevents them from interfering with changelog generation
+          PRE_RELEASE_TAGS=$(git tag -l | grep '-|+' || true)
+          if [ -n "$PRE_RELEASE_TAGS" ]; then
+            echo "Temporarily removing pre-release tags: $PRE_RELEASE_TAGS"
+            echo "$PRE_RELEASE_TAGS" | xargs -r git tag -d
+          fi
+
+          npx changelogithub --output ${{ github.workspace }}-CHANGELOG.txt
+
+      - name: Build Release
+        run: |
+          chmod +x build.sh
+          ./build.sh --release --compress
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Publish npm
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.draft) }}
+        run: |
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "NPM_TOKEN not set, skipping npm publish"
+          else
+            echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+            pnpm publish --no-git-checks
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Read version from dist/VERSION
+        id: version
+        run: echo "tag_name=$(cat dist/VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Upload Release Assets
+        run: |
+          gh release edit \
+            --title "Release ${{ steps.version.outputs.tag_name }}" \
+            --notes-file "${{ github.workspace }}-CHANGELOG.txt" \
+            --draft=${{ github.event_name == 'workflow_dispatch' && inputs.draft || false }} \
+            ${{ steps.version.outputs.tag_name }} \
+            dist/openlist-frontend-dist-v*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: write

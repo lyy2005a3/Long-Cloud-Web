@@ -149,7 +149,7 @@
     "root_folder_path": "根文件夹路径",
     "url": "链接"
   },
-  "AList V3": {
+  "OpenList": {
     "forward_archive_requests": "转发解压请求",
     "meta_password": "元信息密码",
     "pass_ua_to_upsteam": "传递UA至上游",
@@ -1133,7 +1133,7 @@
     },
     "189CloudPC": {},
     "AList V2": {},
-    "AList V3": {},
+    "OpenList": {},
     "Alias": {},
     "Aliyundrive": {
       "alert": "在这个驱动中可能有一个死循环的错误。\n已废弃，不再维护，并将在未来的版本中删除。\n我们建议使用官方驱动的 阿里云盘Open。"
@@ -1217,7 +1217,7 @@
     "189Cloud": "天翼云盘",
     "189CloudPC": "天翼云盘客户端",
     "AList V2": "AList V2",
-    "AList V3": "AList V3",
+    "OpenList": "OpenList",
     "Alias": "别名",
     "Aliyundrive": "阿里云盘",
     "AliyundriveOpen": "阿里云盘Open",
