@@ -93,6 +93,7 @@ if [ "$BUILD_TYPE" == "release" ] || [ "$ENFORCE_TAG" == "true" ]; then
     fi
 else
     # For dev build, use tag if available, otherwise fallback to v0.0.0
+    git tag -d rolling >/dev/null 2>&1 || true
     git_version=$(git describe --abbrev=0 --tags 2>/dev/null || echo "v0.0.0")
     git_version_clean=${git_version#v}
     git_version_clean=${git_version_clean%%-*}
